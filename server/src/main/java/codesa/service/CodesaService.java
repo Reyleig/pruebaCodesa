@@ -1,4 +1,4 @@
-package codesa.prueba.service;
+package codesa.service;
 
 public interface CodesaService {
 }
