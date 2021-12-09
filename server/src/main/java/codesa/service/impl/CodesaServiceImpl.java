@@ -63,15 +63,10 @@ public class CodesaServiceImpl implements CodesaService {
 
     @Override
     public boolean createUser(UserDto userDto) {
-        try {
             if (codesaRepository.getUserByName(userDto) > 0){
                 throw new BusinessCodesaException(
                         messageExceptionDtoUtil.resolveMessage(ValidationMessageEnum.USER_ALREADY_EXIST));
             }
             return codesaRepository.createUser(userDto) > 0;
-        } catch (Exception e) {
-            throw new BusinessCodesaException(
-                    messageExceptionDtoUtil.resolveMessage(ValidationMessageEnum.ERROR_CREATE_USER));
         }
-    }
 }

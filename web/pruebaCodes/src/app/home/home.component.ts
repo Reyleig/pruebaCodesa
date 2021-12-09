@@ -142,5 +142,8 @@ export class HomeComponent implements OnInit {
     });
 
   }
+  clean(){
+    this.nombreUsuario=''
+  }
 
 }
