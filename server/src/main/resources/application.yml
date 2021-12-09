@@ -1,1 +1,13 @@
+server:
+  port: 3000
 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: admin
+    hikari:
+      connectionTimeout: 30000
+      maximumPoolSize: 2
+      maxLifetime: 1800000
+      autoCommit: true

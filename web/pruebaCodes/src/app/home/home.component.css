@@ -1,0 +1,34 @@
+table {
+    width: 50%;
+  }
+.contenedor{
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+}
+.contenedor-btn{
+    display: flex;
+    margin-left: auto;
+    width: 75%;
+    flex-flow: column;
+}
+.contenedor2-btn{
+    margin: 0.5rem;
+
+}
+.contenedor-input{
+    margin: 0.5rem;
+}
+.contenedor-principal{
+    padding-top: 2rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+.ccontendor-toolbar{
+    width: 80%;
+    margin: auto;
+}  
+.btn1{
+    margin-right: 0.5rem;
+}
+  

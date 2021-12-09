@@ -1,0 +1,77 @@
+<p>
+    <mat-toolbar>
+        <span>Gestion de Usuarios</span>
+    </mat-toolbar>
+</p>
+<div class="contenedor-principal">
+
+    <div class="contendor-toolbar">
+        <p>
+            <mat-toolbar color="primary">
+                <span>Lista Usuarios</span>
+                <span class="example-spacer"></span>
+            </mat-toolbar>
+        </p>
+    </div>
+    <form action="">
+        <div class="contenedor-btn">
+            <div class="contenedor2-btn">
+                <button (click)="obtenerStateUsuario()" class="btn1" mat-raised-button
+                    color="primary">Consultar</button>
+                    <button (click)="openConsultaModal()" class="btn1" mat-raised-button
+                    color="primary">Crear</button>
+                <button mat-raised-button color="primary">Limpiar</button>
+
+            </div>
+            <div class="contenedor-input">
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input [(ngModel)]="nombreUsuario" name="nombreUsuario" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+
+
+    <div class="contenedor">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let element"> {{element.id_usuario}} </td>
+            </ng-container>
+            <ng-container matColumnDef="rol">
+                <th mat-header-cell *matHeaderCellDef> Rol </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombre_rol}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="activo">
+                <th mat-header-cell *matHeaderCellDef> Activo </th>
+                <td mat-cell *matCellDef="let element"> {{element.activo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> actions </th>
+                <td mat-cell *matCellDef="let element"> <button (click)="openConsultaModal(element)" class="btn1"
+                        mat-raised-button color="primary">Editar</button>
+                    <button (click)="eliminarUsuario(element.id_usuario,element.nombre)" class="btn1" mat-raised-button color="primary"> <mat-icon>delete</mat-icon>
+                        
+                    </button>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="btnEliminar">
+                <th mat-header-cell *matHeaderCellDef> Activo </th>
+                <td mat-cell *matCellDef="let element"> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+    </div>
+</div>

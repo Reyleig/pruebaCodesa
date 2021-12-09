@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>{{tituloModal}}</h1>
+
+<br>
+<form action="" [formGroup]="options">
+    <mat-form-field appearance="fill">
+        <mat-label>Id</mat-label>
+        <input type="string" name="id" matInput formControlName="id_usuario" class="form-control" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value" required>
+        <mat-label>Nombre</mat-label>
+        <input type="string" name="nombre" matInput formControlName="nombre" class="form-control">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value"
+        [floatLabel]="floatLabelControl.value">
+        <mat-select  required formControlName="id_rol" class="form-control">
+            <mat-option value="1">ADMINISTRADOR</mat-option>
+            <mat-option value="2">AUDITOR</mat-option>
+            <mat-option value="3">AUXILIAR</mat-option>
+        </mat-select>
+        <mat-label>Rol</mat-label>
+    </mat-form-field>
+
+    <div>
+        <label>Activo: </label>
+        <mat-radio-group [formControl]="floatLabelControl" formControlName="activo" class="form-control">
+            <mat-radio-button value="S">Si</mat-radio-button>
+            <mat-radio-button value="N">No</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+</form>
+
+<br>
+
+
+<div mat-dialog-actions style="padding-top: 20px;">
+    <button mat-button (click)="confirm()" color="primary"
+        cdkFocusInitial>Aceptar</button>
+    &nbsp;
+    <button mat-button (click)="closeDialog()">Cancelar</button>
+</div>
