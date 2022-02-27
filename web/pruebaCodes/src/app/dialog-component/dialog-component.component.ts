@@ -15,6 +15,7 @@ export class DialogComponentComponent implements OnInit {
   usuarioDto: UsuarioDto[] = [];
   options: FormGroup;
   selected: any;
+  blState:boolean=true;
 
   hideRequiredControl = new FormControl(false);
   floatLabelControl = new FormControl();
@@ -45,9 +46,6 @@ export class DialogComponentComponent implements OnInit {
       id_usuario: data.id_usuario,
       id_rol: data.id_rol
     })
-    console.log(data.id_rol)
-    var s:any = document.getElementById('select');
-
   }
 
   ngOnInit(): void {
